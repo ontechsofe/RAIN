@@ -1,8 +1,8 @@
 # SOFE3720-FPR-AEJM
 
-### Goal: >80% Predicitive Accuracy
+#### Goal: >80% Predicitive Accuracy
 
-#### Stack:
+##### Stack:
 * Python 3.6
 * Flask Server with Microservices
 * TensorFlow
@@ -10,7 +10,7 @@
 * Javascript
 * Express Routing
   
-#### Resources:
+##### Resources:
 * Government of Canada Weather Forecasting
 * Dark Sky Weather API
 * Wunderground (250,000+ Weather Stations)
