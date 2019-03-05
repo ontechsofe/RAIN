@@ -1,4 +1,4 @@
-# SOFE3720-FPR-AEJM
+# WeatherAI-RAIN
 
 #### Goal: >80% Predicitive Accuracy
 
