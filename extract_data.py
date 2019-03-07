@@ -7,6 +7,7 @@ from matplotlib.pyplot import *
 from keys import *
 from tqdm import tqdm
 
+NUMBER_TO_EXPORT = 1
 # KEY, LAT, LONG, TIME(UNIX)
 BASE_URL = 'https://api.darksky.net/forecast'
 # North Oshawa Latitude and Longitude
@@ -76,6 +77,6 @@ features = ['date', 'mean_temp', 'mean_dewpt', 'mean_pressure',
             'max_dewpt', 'min_dewpt', 'max_pressure', 'min_pressure'
             ,'precip_probability', 'precip_intensity']
 DailySummary = namedtuple("DailySummary", features)
-records = request_weather_data(ETHAN_API_KEY, target_date, 1000)
+records = request_weather_data(SAFE_KEY, target_date, NUMBER_TO_EXPORT)
 df = DataFrame(records, columns=features).set_index('date')
 df.to_csv('training_data.csv', sep=',')
