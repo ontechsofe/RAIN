@@ -4,11 +4,12 @@ from matplotlib.pyplot import rcParams, title, xlabel, show
 def derive_nth_day_feature(df, feature, N):  
     rows = df.shape[0]
     nth_prior_measurements = [None]*N + [df[feature][i-N] for i in range(N, rows)]
-    col_name = "{}_{}".format(feature, N)
+    col_name = f'{feature}_{N}'
     df[col_name] = nth_prior_measurements
 
 df = read_csv('data/training_data.csv', sep=',', header=0, index_col='date')
 feats = list(df.columns)
+df = df.sort_index(ascending=True)
 
 for feat in feats:
     for N in range(1, 4):
@@ -34,6 +35,5 @@ df = df[to_keep]
 # show()
 
 df.dropna()
-df = df.sort_index(ascending=True)
 print(df)
 df.to_csv('data/clean_training_data.csv', sep=',')
