@@ -1,0 +1,143 @@
+Temp (°C)_35111
+Temp (°C)_35060
+Temp (°C)_35086
+Temp (°C)_35157
+Temp (°C)_148
+Temp (°C)_35085
+Dew Point Temp (°C)_36
+Temp (°C)_35180
+Temp (°C)_35062
+Temp (°C)_35108
+Temp (°C)_35061
+Temp (°C)_35182
+Temp (°C)_35110
+Temp (°C)_35181
+Temp (°C)_35109
+Dew Point Temp (°C)_35
+Temp (°C)_164
+Temp (°C)_124
+Temp (°C)_66
+Temp (°C)_140
+Temp (°C)_91
+Temp (°C)_40
+Dew Point Temp (°C)_34
+Temp (°C)_77
+Temp (°C)_33
+Temp (°C)_116
+Dew Point Temp (°C)_33
+Temp (°C)_100
+Temp (°C)_147
+Temp (°C)_54
+Temp (°C)_165
+Dew Point Temp (°C)_32
+Temp (°C)_123
+Temp (°C)_141
+Temp (°C)_41
+Temp (°C)_67
+Temp (°C)_92
+Dew Point Temp (°C)_31
+Temp (°C)_117
+Temp (°C)_146
+Temp (°C)_166
+Temp (°C)_32
+Temp (°C)_76
+Temp (°C)_99
+Temp (°C)_142
+Dew Point Temp (°C)_30
+Temp (°C)_122
+Temp (°C)_53
+Temp (°C)_167
+Temp (°C)_145
+Temp (°C)_42
+Temp (°C)_168
+Temp (°C)_118
+Temp (°C)_93
+Temp (°C)_68
+Dew Point Temp (°C)_29
+Temp (°C)_143
+Temp (°C)_144
+Temp (°C)_121
+Temp (°C)_98
+Temp (°C)_119
+Temp (°C)_75
+Dew Point Temp (°C)_28
+Temp (°C)_120
+Temp (°C)_31
+Temp (°C)_94
+Temp (°C)_52
+Temp (°C)_43
+Temp (°C)_69
+Dew Point Temp (°C)_27
+Temp (°C)_97
+Temp (°C)_95
+Temp (°C)_96
+Temp (°C)_74
+Dew Point Temp (°C)_26
+Temp (°C)_70
+Dew Point Temp (°C)_25
+Temp (°C)_44
+Temp (°C)_73
+Temp (°C)_51
+Temp (°C)_30
+Temp (°C)_71
+Dew Point Temp (°C)_24
+Temp (°C)_72
+Dew Point Temp (°C)_23
+Temp (°C)_45
+Temp (°C)_13
+Dew Point Temp (°C)_22
+Temp (°C)_50
+Temp (°C)_12
+Temp (°C)_14
+Dew Point Temp (°C)_21
+Temp (°C)_15
+Temp (°C)_11
+Temp (°C)_46
+Temp (°C)_29
+Dew Point Temp (°C)_20
+Temp (°C)_49
+Temp (°C)_47
+Dew Point Temp (°C)_19
+Temp (°C)_48
+Temp (°C)_16
+Dew Point Temp (°C)_18
+Temp (°C)_10
+Dew Point Temp (°C)_17
+Temp (°C)_28
+Temp (°C)_17
+Dew Point Temp (°C)_16
+Dew Point Temp (°C)_15
+Temp (°C)_9
+Dew Point Temp (°C)_14
+Temp (°C)_18
+Dew Point Temp (°C)_13
+Temp (°C)_27
+Dew Point Temp (°C)_12
+Temp (°C)_19
+Temp (°C)_8
+Dew Point Temp (°C)_11
+Temp (°C)_26
+Dew Point Temp (°C)_10
+Temp (°C)_20
+Dew Point Temp (°C)_9
+Temp (°C)_21
+Temp (°C)_25
+Temp (°C)_7
+Dew Point Temp (°C)_8
+Temp (°C)_22
+Dew Point Temp (°C)_7
+Temp (°C)_24
+Temp (°C)_23
+Dew Point Temp (°C)_6
+Dew Point Temp (°C)_5
+Temp (°C)_6
+Dew Point Temp (°C)_4
+Dew Point Temp (°C)_3
+Dew Point Temp (°C)_2
+Dew Point Temp (°C)_1
+Dew Point Temp (°C)
+Temp (°C)_5
+Temp (°C)_4
+Temp (°C)_3
+Temp (°C)_2
+Temp (°C)_1
