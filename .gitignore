@@ -2,3 +2,4 @@
 /.vscode
 /data
 keys.py
+*.csv
