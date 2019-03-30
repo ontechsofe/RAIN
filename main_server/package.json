@@ -1,0 +1,20 @@
+{
+  "name": "rain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dddos": "^0.1.2",
+    "diskdb": "^0.1.17",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "winston": "^3.2.1"
+  }
+}
