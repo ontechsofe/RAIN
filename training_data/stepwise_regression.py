@@ -5,16 +5,15 @@ df = read_csv('clean_data_set.csv', sep=',', header=0, index_col=['Date/Time', '
 # print("Finished import")
 
 predictors = list()
-with open('relevant_features.txt', 'r') as f:
+with open('dewpt_relevant_features.txt', 'r') as f:
     predictors = [line.strip() for line in f]
 
 # print(predictors)
-df = df[['Temp (°C)'] + predictors]
+df = df[['Dew Point Temp (°C)'] + predictors]
 
 X = add_constant(df[predictors]) 
-Y = df['Temp (°C)']
+Y = df['Dew Point Temp (°C)']
 # print(x.ix[:5, :5])
-X = X.drop('Dew Point Temp (°C)', axis=1)
 
 alpha = 0.05
 
@@ -44,4 +43,4 @@ while not results_fit:
 print(model.summary())
 X = X.drop('const', axis=1)
 print(X)
-X.to_csv('final_clean_training_set.csv')
+X.to_csv('final_clean_training_set_dewpt.csv')
