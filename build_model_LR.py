@@ -16,6 +16,6 @@ prediction = model.predict(X_test)
 # print(prediction)
 dump(model, './models/scikit/temp_model.joblib')
 
-print(f'The Explained Variance: {model.score(X_test, Y_test)}')  
-print(f'The Mean Absolute Error: {mean_absolute_error(Y_test, prediction)} degrees celsius')  
+print(f'The Explained Variance: {model.score(X_test, Y_test)}')
+print(f'The Mean Absolute Error: {mean_absolute_error(Y_test, prediction)} degrees celsius')
 print(f'The Median Absolute Error: {median_absolute_error(Y_test, prediction)} degrees celsius')
