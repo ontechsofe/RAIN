@@ -34,6 +34,9 @@ class Database {
     getDatabase() {
         return this.database
     }
+    insertPredictedData(data) {
+        this.database.raindata_cache.save(data)
+    }
 }
 
 module.exports = {

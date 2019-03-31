@@ -22,7 +22,8 @@ try {
     app.use(bodyParser.json({limit: '512mb'}))
     app.use(bodyParser.urlencoded({limit: '512mb', extended: true}))
     logger.info("Starting Rain...")
-    // rain.
+    // rain
+    // Will contain the event-loop for data collection
     logger.info("Rain Started")
     app.use('/', index) // Base URL
     app.use('/ec', ec)

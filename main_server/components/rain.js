@@ -9,13 +9,18 @@ const db = require('./database').Database.getInstance()
 
 class RAIN {
     constructor() {
-       
+        this.database = db
     }
     static getInstance() {
         if (!!!this.instance) {
             this.instance = new RAIN()
         }
         return this.instance
+    }
+    hasPredictedData(data) {
+        logger.info("Predicted Data Received")
+        this.database.insertPredictedData(data)
+        logger.info("Predicted Data Complete")
     }
 }
 
