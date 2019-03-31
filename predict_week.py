@@ -3,6 +3,7 @@ from time import time
 import requests as req
 from predict import get_predictor_values, predict
 from tqdm import tqdm
+from flask import jsonify
 
 
 def predict_week():
@@ -11,7 +12,7 @@ def predict_week():
     hour = (((int(time() // 86400)) * 86400 + 4 * 60 * 60) * 1000)
     feat_temp = get_predictors()
     feat_dewpt = get_predictors(dewpt=True)
-    for i in tqdm(range(0, 1)):
+    for i in tqdm(range(0, 168)):
         use_predicted.append(i)
         df_temp = get_predictor_values(hour, feat_temp, use_predicted, predictions)
         df_dewpt = get_predictor_values(hour, feat_dewpt, use_predicted, predictions)
@@ -20,14 +21,14 @@ def predict_week():
 
         predictions.append({
             'date_value': hour,
-            'data': {
+            'predicted': {
                 'temp': round(pred_temp, 2),
-                'dewpt': round(pred_dewpt, 2)
+                'dew_point': round(pred_dewpt, 2)
             }
         })
         hour += 3600000
-
-    return predictions
+    return {'data': predictions}
+    # return predictions
 
 # def initialize():
 #     times = ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00',

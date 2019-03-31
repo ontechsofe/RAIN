@@ -1,7 +1,6 @@
 from joblib import load
 import requests as req
 from pandas import read_json, DataFrame, concat
-import json
 from tqdm import tqdm
 
 def predict(df, dewpt=False) -> list:
@@ -21,13 +20,16 @@ def get_predictor_values(epoch_time, predictors, use_predicted, predictions):
         if 'temp' in p:
             digits = int(p.split('_')[1])
             resp = req.get(f'http://sofe3720.ml/ec/past/{epoch_time}/{digits}').json()['message']['data']
-            
-            if len(resp) > 0:
+            if digits in use_predicted and len(resp) > 0:
+                val = predictions[len(predictions)-digits]['data']['temp']
+            elif len(resp) > 0:
                 val = resp[0]['temp']
         else:
             digits = int(p.split('_')[2])
             resp = req.get(f'http://sofe3720.ml/ec/past/{epoch_time}/{digits}').json()['message']['data']
-            if len(resp) > 0:
+            if digits in use_predicted and len(resp) > 0:
+                val = predictions[len(predictions)-digits]['data']['dew_point']
+            elif len(resp) > 0:
                 val = resp[0]['dew_point']
         values[p] = val
     df = DataFrame.from_dict(values, orient='index')
