@@ -18,7 +18,7 @@ def week():
         json_obj = loads(dumps(predict_week()))
         url = 'http://sofe3720.ml/predictions'
         headers = {'content-type': 'application/json'}
-        print(dumps(json_obj))
+        # print(dumps(json_obj))
         requests.post(url, data=dumps(json_obj), headers=headers)
 
     thread = Thread(target=do_work)

@@ -12,7 +12,7 @@ def predict_week():
     hour = (((int(time() // 86400)) * 86400 + 4 * 60 * 60) * 1000)
     feat_temp = get_predictors()
     feat_dewpt = get_predictors(dewpt=True)
-    for i in tqdm(range(0, 168)):
+    for i in tqdm(range(0, 1)):
         use_predicted.append(i)
         df_temp = get_predictor_values(hour, feat_temp, use_predicted, predictions)
         df_dewpt = get_predictor_values(hour, feat_dewpt, use_predicted, predictions)
@@ -22,8 +22,8 @@ def predict_week():
         predictions.append({
             'date_value': hour,
             'predicted': {
-                'temp': round(pred_temp, 2),
-                'dew_point': round(pred_dewpt, 2)
+                'temp': round(pred_temp, 1),
+                'dew_point': round(pred_dewpt, 1)
             }
         })
         hour += 3600000
@@ -43,15 +43,9 @@ def predict_week():
 def get_predictors(dewpt=False):
     predictors = list()
     if dewpt:
-        df = read_csv('training_data/final_clean_training_set_dewpt.csv',
-                      index_col=['Date/Time', 'Year', 'Month', 'Day', 'Time'])
-        predictors = df.columns
+        with open('training_data/dewpt_final_features.txt', 'r') as f:
+            predictors = [line.strip() for line in f]
     else:
-        df = read_csv('training_data/final_clean_training_set_temp.csv',
-                      index_col=['Date/Time', 'Year', 'Month', 'Day', 'Time'])
-        predictors = df.columns
-    predictors = [p.replace('Dew Point Temp (°C)', 'dew_point')
-                  for p in predictors]
-    predictors = [p.replace('Temp (°C)', 'temp') for p in predictors]
-
+        with open('training_data/temp_final_features.txt', 'r') as f:
+            predictors = [line.strip() for line in f]
     return predictors
