@@ -25,7 +25,7 @@ try {
     // rain
     // Will contain the event-loop for data collection
     logger.info("Rain Started")
-    app.use('/', index) // Base URL
+    app.use('/', index)
     app.use('/ec', ec)
     app.set('port', PORT)
     logger.info(`Listening on port ${PORT}`)
