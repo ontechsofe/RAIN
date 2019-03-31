@@ -9,7 +9,7 @@ class Database {
     constructor() {
         this.database = null
         this.db_path = path.join(__dirname, '..', 'data')
-        this.DATABASE_TABLES = [].map(element => `data_${element}`)
+        this.DATABASE_TABLES = ['cache'].map(element => `raindata_${element}`)
         this.connectToDatabase()
     }
     static getInstance() {

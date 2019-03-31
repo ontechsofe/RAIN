@@ -10,6 +10,7 @@ const app = express()
 const http = require('http').Server(app)
 const rain = require('./components/rain').RAIN.getInstance()
 const index = require('./routes/index')
+const ec = require('./routes/ec')
 const {cors} = require('./components/cors')
 
 try {
@@ -23,7 +24,8 @@ try {
     logger.info("Starting Rain...")
     // rain.
     logger.info("Rain Started")
-    app.use('/', index)
+    app.use('/', index) // Base URL
+    app.use('/ec', ec)
     app.set('port', PORT)
     logger.info(`Listening on port ${PORT}`)
     http.listen(PORT)
