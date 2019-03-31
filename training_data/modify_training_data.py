@@ -2,7 +2,7 @@ from tqdm import tqdm
 from pandas import read_csv
 
 
-def derive_nth_day_feature(df, feature, N):
+def derive_nth_hour_feature(df, feature, N):
     rows = df.shape[0]
     nth_prior_measurements = [None]*N + \
         [df[feature][i-N] for i in range(N, rows)]
@@ -26,6 +26,6 @@ hours = [i for i in range(1, 1 + 168)] + [i for i in range(8760, 8760 + 168)] + 
 
 for feat in tqdm(feats):
     for N in tqdm(hours):
-        derive_nth_day_feature(df, feat, N)
-df.dropna()
+        derive_nth_hour_feature(df, feat, N)
+df = df.dropna()
 df.to_csv('training_set.csv')
