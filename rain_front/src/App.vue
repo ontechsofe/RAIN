@@ -1,13 +1,8 @@
 <template>
   <v-app dark>
     <v-toolbar app color="primary">
-      <v-toolbar-title class="headline">
-        <span class="font-weight-light">r</span>
-        <span>AI</span>
-        <span class="font-weight-light">n</span>
-      </v-toolbar-title>
+      <img height="45px" src="@/assets/logo_white.png">
     </v-toolbar>
-
     <v-content>
       <router-view></router-view>
     </v-content>
@@ -18,9 +13,7 @@
 export default {
   name: 'App',
   data () {
-    return {
-      //
-    }
+    return { }
   }
 }
 </script>
