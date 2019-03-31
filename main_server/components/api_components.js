@@ -10,6 +10,7 @@ const api_general = (req, res, next) => {
 
 const api_predictions = (req, res, next) => {
     var predicted_data = req.body.data
+    console.log({"body": req.body})
     rain.hasPredictedData(predicted_data)
     return res.json({response: 200, message: "Data received!", len: predicted_data.length})
 }
