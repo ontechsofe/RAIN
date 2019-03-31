@@ -35,7 +35,11 @@ class Database {
         return this.database
     }
     insertPredictedData(data) {
-        this.database.raindata_cache.save(data)
+        data.forEach(element => {
+            if (this.database.raindata_cache.find({date_value: element.date_value}).length === 0) {
+                this.database.raindata_cache.save(element)
+            }
+        })
     }
 }
 

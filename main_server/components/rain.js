@@ -19,7 +19,6 @@ class RAIN {
     }
     hasPredictedData(data) {
         logger.info("Predicted Data Received")
-        console.log(data)
         this.database.insertPredictedData(data)
         logger.info("Predicted Data Complete")
     }
