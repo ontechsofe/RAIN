@@ -12,7 +12,7 @@ def predict_week():
     hour = (((int(time() // 86400)) * 86400 + 4 * 60 * 60) * 1000)
     feat_temp = get_predictors()
     feat_dewpt = get_predictors(dewpt=True)
-    for i in tqdm(range(0, 1)):
+    for i in tqdm(range(0, 169)):
         use_predicted.append(i)
         df_temp = get_predictor_values(hour, feat_temp, use_predicted, predictions)
         df_dewpt = get_predictor_values(hour, feat_dewpt, use_predicted, predictions)
