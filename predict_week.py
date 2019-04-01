@@ -6,7 +6,8 @@ from tqdm import tqdm
 def predict_week():
     predictions = list()
     use_predicted = list()
-    hour = (((int(time() // 86400)) * 86400 + 4 * 60 * 60) * 1000)
+    hour = (((int(time() // 86400)) * 86400 + 4 * 60 * 60) * 1000) - (24*60*60*1000)
+    print(hour)
     feat_temp = get_predictors()
     feat_dewpt = get_predictors(dewpt=True)
     for i in tqdm(range(0, 169)):
@@ -35,6 +36,6 @@ def get_predictors(dewpt=False):
         with open('training_data/dewpt_final_features.txt', 'r') as f:
             predictors = [line.strip() for line in f]
     else:
-        with open('training_data/temp_final_features.txt', 'r') as f:
+        with open('training_data/temp_final_features_2.txt', 'r') as f:
             predictors = [line.strip() for line in f]
     return predictors

@@ -9,7 +9,8 @@ def predict(df, dewpt=False) -> list:
     if dewpt:
         model = load('models/dewpt_model.joblib')
     else:
-        model = load('models/temp_model.joblib')
+        model = load('models/temp_model_2.joblib')
+    # print(df)
     # df = read_csv('training_data/march24_test_temp.csv', index_col=['Date/Time', 'Year', 'Month', 'Day', 'Time'])
     return model.predict(df)
 
@@ -18,7 +19,7 @@ def get_predictor_values(epoch_time, predictors, use_predicted, predictions):
     values = dict()
     values['date_value'] = epoch_time
     for p in tqdm(predictors):
-        val = 0.0
+        val = None
         if 'temp' in p:
             digits = int(p.split('_')[1])
             resp = req.get(
@@ -35,6 +36,7 @@ def get_predictor_values(epoch_time, predictors, use_predicted, predictions):
                 val = predictions[len(predictions)-digits]['predicted']['dew_point']
             elif len(resp) > 0:
                 val = resp[0]['dew_point']
+        val = val if val else 0.0
         values[p] = val
     df = DataFrame.from_dict(values, orient='index')
     df = df.T.set_index('date_value')
