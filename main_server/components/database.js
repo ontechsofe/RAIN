@@ -4,6 +4,7 @@ const { logger } = require('./logger')
 const path = require("path")
 const fs = require('fs')
 const db = require('diskdb')
+const moment = require('moment-timezone')
 
 class Database {
     constructor() {
@@ -39,9 +40,7 @@ class Database {
     }
     insertPredictedData(data) {
         data.forEach(element => {
-            if (this.database.raindata_cache.find({date_value: element.date_value}).length === 0) {
-                this.database.raindata_cache.save(element)
-            }
+            this.database.raindata_cache.save(element)
         })
     }
 }
