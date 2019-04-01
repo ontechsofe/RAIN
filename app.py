@@ -12,6 +12,7 @@ app.config["DEBUG"] = True
 def home():
     return "<h1>RAIN</h1><p>This site is a prototype API for weather prediction.</p>"
 
+
 @app.route('/predict/week', methods=['GET'])
 def week():
     def do_work():
@@ -19,11 +20,13 @@ def week():
         url = 'http://sofe3720.ml/predictions'
         headers = {'content-type': 'application/json'}
         # print(dumps(json_obj))
-        requests.post(url, data=dumps(json_obj), headers=headers)
+        resp = requests.post(url, data=dumps(json_obj), headers=headers)
+        print(resp.text)
 
     thread = Thread(target=do_work)
     thread.start()
     # return flask.jsonify({'data': predict_week()})
     return jsonify({'status': 200, 'message': 'We out here!'})
+
 
 app.run()
