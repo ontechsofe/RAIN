@@ -17,7 +17,7 @@ try {
     const profiler = logger.startTimer()
     logger.info("Setup Server...")
     app.use(cors())
-    app.use(new DDoS({maxWeight: 5, errorData: {"response": 429, "message": "slow down"}}).express())
+    // app.use(new DDoS({maxWeight: 5, errorData: {"response": 429, "message": "slow down"}}).express())
     app.use(helmet())
     app.use(bodyParser.json({limit: '512mb'}))
     app.use(bodyParser.urlencoded({limit: '512mb', extended: true}))
