@@ -24,7 +24,7 @@ def get_predictor_values(epoch_time, predictors, use_predicted, predictions):
             resp = req.get(
                 f'http://sofe3720.ml/ec/past/{epoch_time}/{digits}').json()['message']['data']
             if digits in use_predicted and len(resp) > 0:
-                val = predictions[len(predictions)-digits]['data']['temp']
+                val = predictions[len(predictions)-digits]['predicted']['temp']
             elif len(resp) > 0:
                 val = resp[0]['temp']
         else:
@@ -32,7 +32,7 @@ def get_predictor_values(epoch_time, predictors, use_predicted, predictions):
             resp = req.get(
                 f'http://sofe3720.ml/ec/past/{epoch_time}/{digits}').json()['message']['data']
             if digits in use_predicted and len(resp) > 0:
-                val = predictions[len(predictions)-digits]['data']['dew_point']
+                val = predictions[len(predictions)-digits]['predicted']['dew_point']
             elif len(resp) > 0:
                 val = resp[0]['dew_point']
         values[p] = val
