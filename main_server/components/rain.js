@@ -17,6 +17,9 @@ class RAIN {
         }
         return this.instance
     }
+    getForecast() {
+        return this.database.getEverything()
+    }
     hasPredictedData(data) {
         logger.info("Predicted Data Received")
         this.database.insertPredictedData(data)

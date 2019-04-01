@@ -34,6 +34,9 @@ class Database {
     getDatabase() {
         return this.database
     }
+    getEverything() {
+        return this.database.raindata_cache.find()
+    }
     insertPredictedData(data) {
         data.forEach(element => {
             if (this.database.raindata_cache.find({date_value: element.date_value}).length === 0) {

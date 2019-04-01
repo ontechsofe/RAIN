@@ -8,6 +8,10 @@ const api_general = (req, res, next) => {
     return res.json({response: 200})
 }
 
+const api_forecast = (req, res, next) => {
+    return res.json({response: 200, message: "Forecast", data: rain.getForecast()})
+}
+
 const api_predictions = (req, res, next) => {
     var predicted_data = req.body.data
     rain.hasPredictedData(predicted_data)
@@ -21,6 +25,7 @@ const api_giveMeAllYouGot = (req, res, next) => {
 
 module.exports = {
     api_general,
+    api_forecast,
     api_predictions,
     api_giveMeAllYouGot
 }
