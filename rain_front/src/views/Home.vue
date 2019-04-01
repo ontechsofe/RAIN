@@ -3,8 +3,21 @@
         <v-layout column>
             <v-flex class="mb-3">
                 <v-card>
+                    <v-card-text>
+                        <v-sheet color="transparent" class="px-2 py-5">
+                            <i style="font-size:150px" class="wi wi-alien"></i>
+                            <span style="margin-left:20px;font-size:30px">Temp: </span>
+                            <span style="margin-left:20px;font-size:100px">{{ currentTemp[1] }}</span>
+                            <span style="margin-left:20px;font-size:30px">Dew: </span>
+                            <span style="margin-left:20px;font-size:100px">{{ currentDew }}</span>
+                        </v-sheet>
+                    </v-card-text>
+                </v-card>
+            </v-flex>
+            <v-flex class="mb-3">
+                <v-card>
                     <v-card-media>
-                        <v-sheet color="transparent">
+                        <v-sheet color="transparent" class="ma-3">
                             <vue-chart :data="lineGraph.chartData" :options="lineGraph.options" type="line"></vue-chart>
                         </v-sheet>
                     </v-card-media>
@@ -121,7 +134,8 @@
                     c.lineGraph.chartData.datasets[0].data.push(element.predicted.temp)
                     // console.log("Element:", element.date_value, "Now:", now)
                 })
-                c.loaded = true
+                c.currentTemp = c.value
+                c.currentDew = res[0].predicted.dew_point
             }).catch(error => {
                 console.error(error)
             }) 
