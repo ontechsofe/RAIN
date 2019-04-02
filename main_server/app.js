@@ -1,5 +1,5 @@
 "use strict"
-const PORT = 8080
+const PORT = 8000
 
 const {logger} = require('./components/logger')
 const express = require('express')
