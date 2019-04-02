@@ -111,7 +111,7 @@
             c.loaded = true
             let now = moment().minute(0).second(0).millisecond(0).valueOf() 
             let startOfToday = moment().hour(0).minute(0).second(0).millisecond(0).valueOf()
-            axios.get('http://sofe3720.ml/forecast').then(response => {
+            axios.get('http://sofe3720.ml:8000/forecast').then(response => {
                 let res = response.data.data
                 c.value = []
                 res.sort(sortEpoch).forEach(element => {
